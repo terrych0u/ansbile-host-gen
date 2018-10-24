@@ -1,0 +1,6 @@
+{% for item in items %}
+[{{item.groups_name}}]
+{% for hostname,ip in zip(item.hostname,item.ip) -%}
+{{hostname}}    ansible_host={{ip}}
+{% endfor %}
+{% endfor %}
